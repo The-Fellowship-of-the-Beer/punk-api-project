@@ -1,5 +1,5 @@
-function AbvButtons(props){
-  const {setAbvGt, setAbvLt, setNoOption} = props;
+function AbvButtons(props) {
+  const { setAbvGt, setAbvLt, setNoOption } = props;
 
   function buttonHandler(event) {
     console.log(event.target.id);
@@ -19,43 +19,38 @@ function AbvButtons(props){
       setAbvGt(false);
     }
   }
-  return<>
-          
-         
-            <div>
-              <div
-                className="btn-group mb-4"
-                role="group"
-                aria-label="Basic example"
-              >
-                <button
-                  type="button"
-                  id="button-none"
-                  onClick={buttonHandler}
-                  className="btn btn-outline-dark "
-                >
-                  None
-                </button>
-                <button
-                  type="button"
-                  id="button-gt"
-                  onClick={buttonHandler}
-                  className="btn btn-outline-dark "
-                >
-                  Greater Than
-                </button>
-                <button
-                  type="button"
-                  id="button-lt"
-                  onClick={buttonHandler}
-                  className="btn btn-outline-dark "
-                >
-                  Lower Than
-                </button>
-              </div>
-            </div>
-          
-  </>
+  return (
+    <>
+      <div>
+        <div className="btn-group mb-4" role="group" aria-label="Basic example">
+          <button
+            type="button"
+            id="button-none"
+            onClick={buttonHandler}
+            className="btn btn-outline-dark "
+          >
+            None
+          </button>
+          <button
+            type="button"
+            id="button-gt"
+            onClick={buttonHandler}
+            className="btn btn-outline-dark "
+          >
+            Greater Than
+          </button>
+          <button
+            type="button"
+            id="button-lt"
+            onClick={buttonHandler}
+            className="btn btn-outline-dark "
+          >
+            Lower Than
+          </button>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default AbvButtons;
