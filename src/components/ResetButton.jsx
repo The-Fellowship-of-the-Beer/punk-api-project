@@ -1,7 +1,14 @@
-import Search from "./Search";
-
-function ResetButton(props){
-  const {setQ, setBeerData, setValue, setPhValue, setNoOption, setOptionPH, setOptionSRM, setSRMValue} = props;
+function ResetButton(props) {
+  const {
+    setQ,
+    setBeerData,
+    setValue,
+    setPhValue,
+    setNoOption,
+    setOptionPH,
+    setOptionSRM,
+    setSRMValue,
+  } = props;
 
   function inputResetHandler() {
     setQ("");
@@ -22,18 +29,19 @@ function ResetButton(props){
       });
   }
 
-  
-  return <> 
-    <div className="col-md-1">
-    <button
-      type="reset"
-      className="btn btn-dark text-light"
-      onClick={inputResetHandler}
-    >
-      Reset
-    </button>
-  </div>
-</>
+  return (
+    <>
+      <div className="col-md-1">
+        <button
+          type="reset"
+          className="btn btn-dark text-light"
+          onClick={inputResetHandler}
+        >
+          Reset
+        </button>
+      </div>
+    </>
+  );
 }
 
 export default ResetButton;

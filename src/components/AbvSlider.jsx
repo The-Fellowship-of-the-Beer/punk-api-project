@@ -1,16 +1,25 @@
 import data from "../data/data";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import '../index.css';
+import "../index.css";
 
-function AbvSlider(props){
-  const{abvGt, abvLt, setBeerData, value, setValue, phValue, optionPH, noOption, optionSRM, srmValue} = props;
-  
+function AbvSlider(props) {
+  const {
+    abvGt,
+    abvLt,
+    setBeerData,
+    value,
+    setValue,
+    phValue,
+    optionPH,
+    noOption,
+    optionSRM,
+    srmValue,
+  } = props;
+
   function sliderHandler() {
     if (abvGt === true) {
-      fetch(
-        `${data}&abv_gt=${value}`
-      )
+      fetch(`${data}&abv_gt=${value}`)
         .then((response) => response.json())
         .then((json) => {
           if (optionPH === false && optionSRM === true) {
@@ -20,24 +29,19 @@ function AbvSlider(props){
             );
             console.log(result);
             setBeerData(result);
-          } else if(optionSRM === false && optionPH === true){
-            setBeerData(
-              json.filter((j) => srmValue < j.srm)
-            );
-          }else if(optionPH === false && optionSRM === false){
+          } else if (optionSRM === false && optionPH === true) {
+            setBeerData(json.filter((j) => srmValue < j.srm));
+          } else if (optionPH === false && optionSRM === false) {
             const result = json.filter(
               (j) => j.ph != null && phValue[0] < j.ph && j.ph < phValue[1]
             );
-            setBeerData(result.filter((j) => srmValue < j.srm))
-          }
-          else {
+            setBeerData(result.filter((j) => srmValue < j.srm));
+          } else {
             setBeerData(json);
           }
         });
     } else if (abvLt === true) {
-      fetch(
-        `${data}&abv_lt=${value}`
-      )
+      fetch(`${data}&abv_lt=${value}`)
         .then((response) => response.json())
         .then((json) => {
           if (optionPH === false) {
@@ -54,8 +58,9 @@ function AbvSlider(props){
     }
   }
 
-  return <>
-     <Box sx={{ width: 150 }}>
+  return (
+    <>
+      <Box sx={{ width: 150 }}>
         <Slider
           size="medium"
           id="firstSlider"
@@ -73,6 +78,7 @@ function AbvSlider(props){
           }}
         />
       </Box>
-  </>
+    </>
+  );
 }
 export default AbvSlider;
