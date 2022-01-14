@@ -28,8 +28,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### The Fellowship Of The Beer  
 
-##Team Members
+## Team Members
 
 [Yurdagül Olgun](https://github.com/yurdagulOlgun)  
-[Şahinde Nur Yereşen](https://github.com/nuryeresen)
+[Şahinde Nur Yereşen](https://github.com/nuryeresen)  
 [Duygu Gök](https://github.com/dyggok)
